@@ -1,4 +1,5 @@
 ﻿using System.Runtime.CompilerServices;
+using System.Threading.Channels;
 
 namespace InventoryMaintenance
 {
@@ -6,14 +7,10 @@ namespace InventoryMaintenance
     {
         private List<InventoryItem> items;
 
-        public void Add(InventoryItem item)
-        {
-            
-        }
 
         public static InventoryItemList operator +(InventoryItem item, InventoryItemList list)
         {
-             list.items.Add(item); 
+            list.items.Add(item);
             return list;
         }
         public static InventoryItemList operator -(InventoryItem item, InventoryItemList list)
@@ -22,18 +19,10 @@ namespace InventoryMaintenance
             return list;
         }
 
-
         public InventoryItemList()
         {
             items = new List<InventoryItem>();
         }
-        public delegate void ChangeHandler(InventoryItemList list);
-
-        public event ChangeHandler changed;
-
-
-      
-     
 
         public int Count => items.Count;
 
@@ -42,8 +31,6 @@ namespace InventoryMaintenance
             get { return items[i]; }
             set { items[i] = value; }
         }
-
-
 
         public void Add(int itemNo, string description, decimal price)
         {

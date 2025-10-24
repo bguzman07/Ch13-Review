@@ -1,3 +1,5 @@
+using System.Threading.Channels;
+
 namespace InventoryMaintenance
 {
 
@@ -8,7 +10,17 @@ namespace InventoryMaintenance
             InitializeComponent();
         }
 
+        public delegate void ChangeHandler(InventoryItemList list);
+
+        public event ChangeHandler Changed = null!;
+
         private InventoryItemList items = new();
+
+        public void OnChanged()
+        {
+            Changed?.Invoke(items);
+        }
+
 
         private void frmInventoryMaint_Load(object sender, EventArgs e)
         {
@@ -25,6 +37,7 @@ namespace InventoryMaintenance
                 item = items[i];
                 lstItems.Items.Add(item.GetDisplayText());
             }
+            OnChanged();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -37,6 +50,7 @@ namespace InventoryMaintenance
                 items.Save();
                 FillItemListBox();
             }
+            OnChanged();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -63,6 +77,7 @@ namespace InventoryMaintenance
                     FillItemListBox();
                 }
             }
+            OnChanged();
         }
 
         private void btnExit_Click(object sender, EventArgs e)

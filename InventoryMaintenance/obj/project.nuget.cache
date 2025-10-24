@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ht5Y+muvqwo=",
+  "dgSpecHash": "giNppUnkfMI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\4give\\OneDrive\\Documents\\School Files\\SchoolProjects\\InventoryMaintenance-20251023T172401Z-1-001\\InventoryMaintenance\\InventoryMaintenance\\InventoryMaintenance.csproj",
+  "projectFilePath": "C:\\Users\\4give\\OneDrive\\Documents\\School Files\\SchoolProjects\\InventoryMaintenance - group project\\InventoryMaintenance\\InventoryMaintenance\\InventoryMaintenance.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\4give\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.20\\microsoft.windowsdesktop.app.ref.7.0.20.nupkg.sha512",
     "C:\\Users\\4give\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.20\\microsoft.netcore.app.ref.7.0.20.nupkg.sha512",
